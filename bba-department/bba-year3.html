@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBA 3rd Year</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="bba-year1.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="list-1">
+                <li id="clg-name">St. Joseph's Degree College - ( BBA 3rd Year )</li>
+            </ul>
+            <ul class="list-2">
+                <li><a href="bba-year1.html">BBA 1st Year</a></li>
+                <li><a href="bba-year2.html">BBA 2nd Year</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Add student panel -->
+        <div class="add-student-panel-container hide">
+            <div class="add-student-panel">
+
+                <span class="heading">Enter Student Details</span>
+
+                <label class="label">Student Roll No :</label>
+                <input class="input" type="text" id="student-roll">
+
+                <label class="label">Student Name :</label>
+                <input class="input" type="text" id="student-name">
+
+                <!-- 3rd year -->
+                <label class="label">Semester :</label>
+                <input class="input" type="text" id="student-semester" placeholder="5th or 6th Semester">
+
+                <label class="label">Phone Number :</label>
+                <input class="input" type="text" id="student-phone">
+
+                <label class="label">Parent Phone No. :</label>
+                <input class="input" type="text" id="parent-phone">
+
+                <label class="label">Email :</label>
+                <input class="input" type="text" id="student-email">
+
+                <label class="label">Total Fees :</label>
+                <input class="input" type="text" id="student-fees">
+
+                <label class="label">Paid Fees :</label>
+                <input class="input" type="text" id="student-paid">
+
+                <button type="button" class="add-button">Add Student</button>
+            </div>
+        </div>
+
+        <section class="top-section">
+            <div class="dashboard">
+
+              <div class="batch">
+                    <img src="../assets/time-svgr.svg" alt="" width="20" id="batch-svg">
+                    <span>Batch : 2023-2026</span>
+                </div>
+
+                <div class="total-students">
+                    <img src="../assets/student-group-svg.svg" alt="" width="20" id="total-students-svg">
+                    <span>Total Students :</span>
+                    <span id="student-count">0</span>
+                </div>
+
+                <div class="departments">
+                    <img src="../assets/departments-svg.svg" alt="" width="25" id="departments-svg">
+                    <span><a href="../home.html">Departments</a></span>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="sep"></div>
+
+        <section class="mid-section">
+
+            <div class="top-panel">
+                <input type="search" id="search-bar" class="search-bar" placeholder="🔍︎ Search by Name or Roll Number">
+
+               <button type="button" id="add-student-btn" class="add-student-btn same-btn-all">
+                    <img src="../assets/add-btn--svg.svg" alt="" width="20">
+                    Add Student
+                </button>
+
+                <button type="button" id="import-btn" class="import-btn same-btn-all">
+                    <img src="../assets/import-svg.svg" alt="" width="20">
+                    Import
+                </button>
+
+                <button type="button" id="export-btn" class="export-btn same-btn-all">
+                    <img src="../assets/export-svg.svg" alt="" width="20">
+                    Export
+                </button>
+            </div>
+
+            <div class="student-table">
+                <table border="">
+                    <thead>
+                        <tr>
+                            <th>S.no</th>
+                            <th>Roll</th>
+                            <th>Name</th>
+                            <th>Semester</th>
+                            <th>Department</th>
+                            <th>Phone</th>
+                            <th>Parent</th>
+                            <th>Email</th>
+                            <th>Total</th>
+                            <th>Paid</th>
+                            <th>Remaining</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body"></tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="bba-year3.js"></script>
+</body>
+
+</html>

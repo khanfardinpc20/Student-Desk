@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Student Desk</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(33, 35, 36);
+            animation: out 1.5s ease-out 2s;
+        }
+
+        @keyframes out {
+            to {
+                opacity: 0.5;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .box1>h2 {
+            color: white;
+            font-size: 50px;
+            font-weight: 500;
+        }
+
+        .loader-cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.356);
+            border-radius: 50%;
+        }
+
+        .loader {
+            width: 25px;
+            height: 25px;
+            border: solid transparent 4px;
+            border-top: solid aqua 4px;
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media only screen and (max-width:1365px) {
+
+            body {
+                background-color: #f3fbfe;
+                animation: none;
+            }
+
+            .container {
+                display: none;
+            }
+
+            .show {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .message {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                font-family: "Poppins", sans-serif !important;
+                opacity: 0;
+                animation: showMsg 2s ease 1s forwards;
+                padding: 0 70px;
+            }
+
+            @keyframes showMsg {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .message>p {
+                text-align: center;
+                font-size: 28px;
+                font-weight: 500;
+            }
+
+            .message>span {
+                font-size: 28px;
+                font-weight: 500;
+            }
+        }
+
+        @media only screen and (max-width:1100px) {
+
+            .message>p {
+                font-size: 25px;
+            }
+
+            .message>span {
+                font-size: 25px;
+            }
+        }
+
+        @media only screen and (max-width:900px) {
+
+            .message {
+                padding: 0 40px;
+            }
+
+            .message>p {
+                font-size: 23px;
+            }
+
+            .message>span {
+                font-size: 23px;
+            }
+        }
+
+        @media only screen and (max-width:700px) {
+
+            .message {
+                padding: 0 30px;
+            }
+
+
+            .message>p {
+                font-size: 21px;
+            }
+
+            .message>span {
+                font-size: 21px;
+            }
+        }
+
+        @media only screen and (max-width:500px) {
+
+            .message {
+                padding: 0 20px;
+            }
+
+            .message>p {
+                font-size: 17px;
+            }
+
+            .message>span {
+                font-size: 17px;
+            }
+        }
+
+        /* Media queries for wider screen  */
+        @media only screen and (min-width:1450px) {
+            .box1>h2 {
+                font-size: 55px;
+            }
+
+            .loader {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+
+        @media only screen and (min-width:1650px) {
+            .box1>h2 {
+                font-size: 58px;
+            }
+
+            .loader {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media only screen and (min-width:1850px) {
+            .box1>h2 {
+                font-size: 60px;
+            }
+
+            .loader {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+
+        @media only screen and (min-width:2150px) {
+            .box1>h2 {
+                font-size: 65px;
+            }
+
+            .loader {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        @media only screen and (min-width:2450px) {
+            .box1>h2 {
+                font-size: 67px;
+            }
+
+            .loader {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media only screen and (min-width:2750px) {
+            .box1>h2 {
+                font-size: 70px;
+            }
+
+            .loader {
+                width: 42px;
+                height: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hidden show">
+        <div class="message">
+            <p>This web application is designed specifically for laptop and desktop environments. Mobile phones &
+                tablets are not supported, as the system requries larger screens for accurate and efficient operation.
+            </p>
+            <span>Thank You</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box1">
+            <h2>Student Desk</h2>
+        </div>
+        <div class="box2">
+            <div class="loader-cont">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Restrcition for smaller screens 
+        const minWidth = 1366;
+        if (window.innerWidth >= minWidth) {
+
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 3000);
+        }
+        else {
+            console.log("Unsupported screen size detected, Navigation to home page has been prevented.")
+        }
+
+    </script>
+</body>
+
+</html>

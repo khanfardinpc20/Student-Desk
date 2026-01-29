@@ -1,0 +1,953 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Baloo Bhai 2';
+    background-color: #464646;
+    background: linear-gradient(to right, #485563, #29323c);
+}
+
+nav {
+    background-image: linear-gradient(60deg, #4a7bb3 0%, #4d7caf 100%);
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+ul li {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.list-2 {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 7px;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+main {
+    position: relative;
+}
+
+.add-student-panel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: showPanel 0.8s ease;
+    overflow: hidden;
+}
+
+@keyframes showPanel {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.add-student-panel {
+    height: 600px;
+    width: 500px;
+    background-color: white;
+    border: solid grey 4px;
+    border-radius: 10px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    overflow-y: auto;
+}
+
+.add-student-panel .heading {
+    width: 100%;
+    background-color: rgb(29, 81, 129);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.add-student-panel .label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.add-student-panel .input {
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-student-panel .add-button {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(29, 81, 129);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+/* Top section */
+.top-section {
+    margin: 10px auto;
+    background: rgba(0, 0, 0, 0.200);
+    padding: 7px 0;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.batch {
+    width: 200px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.batch span {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+.total-students {
+    width: 200px;
+    background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.total-students span {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+.departments {
+    width: 200px;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.departments span a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+.sep {
+    height: 2px;
+    width: 90%;
+    background-color: rgba(184, 182, 182, 0.822);
+    margin: 20px auto;
+}
+
+.mid-section {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.top-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    padding: 5px 0;
+}
+
+.top-panel .search-bar {
+    width: 40%;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+.add-student-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(29, 81, 129);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.export-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(29, 81, 129);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.import-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(29, 81, 129);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.same-btn-all {
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.student-table {
+    width: 1500px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    overflow: auto;
+}
+
+
+table {
+    height: 100%;
+    width: 100%;
+    border: solid grey 2px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+thead th {
+    background-color: rgba(0, 0, 0, 0.495);
+    color: white;
+    padding: 5px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+tbody {
+    background-color: white;
+}
+
+tbody td {
+    padding: 7px 10px;
+    font-size: 17px;
+    font-weight: 500;
+    overflow-x: auto;
+    text-align: center;
+}
+
+.editing input {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    overflow: auto;
+}
+
+tbody tr button {
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(89, 89, 90);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: rgb(18, 122, 219);
+}
+
+tr .editing td {
+    text-align: center;
+}
+
+tr .editing .edit-input {
+    text-align: center;
+}
+
+.delete-btn {
+    background-color: rgb(200, 50, 50);
+    margin-left: 5px;
+}
+
+/* Media Queries */
+@media only screen and (min-width:1366px) {
+    ul li {
+        font-size: 28px;
+    }
+
+    .list-2 li a {
+        font-size: 15px;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 190px;
+        padding: 9px 0;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 15px;
+    }
+
+    .search-bar {
+        width: 35%;
+        font-size: 14px !important;
+    }
+
+    .add-student-btn {
+        font-size: 14px;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 14px;
+    }
+
+    .student-table {
+        font-size: 14px;
+        width: 1300px !important;
+    }
+
+    table tr th {
+        font-size: 16px;
+    }
+
+    table tr td {
+        font-size: 14px;
+    }
+
+    .editing input {
+        padding: 0;
+    }
+
+}
+
+@media only screen and (min-width:1500px) {
+    ul li {
+        font-size: 30px;
+    }
+
+    .list-2 li a {
+        font-size: 17px;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 210px;
+        padding: 11px 0;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 17px;
+    }
+
+    .search-bar {
+        width: 45% !important;
+        font-size: 16px !important;
+    }
+
+    .add-student-btn {
+        font-size: 16px !important;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 16px;
+    }
+
+    .student-table {
+        font-size: 16px;
+        width: 1400px !important;
+    }
+
+    table tr th {
+        font-size: 18px;
+    }
+
+    table tr td {
+        font-size: 16px;
+    }
+
+    .add-student-panel {
+        height: 650px;
+        width: 550px;
+    }
+
+    .add-student-panel .heading {
+        font-size: 22px;
+    }
+
+    .add-student-panel .label {
+        font-size: 20px;
+    }
+
+    .add-student-panel .input {
+        font-size: 18px;
+    }
+
+    .add-student-panel .add-button {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width:1700px) {
+    ul li {
+        font-size: 32px;
+    }
+
+    .list-2 li a {
+        font-size: 19px;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 230px;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 19px;
+    }
+
+    .search-bar {
+        font-size: 18px;
+    }
+
+    .add-student-btn {
+        font-size: 18px !important;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 18px;
+    }
+
+    .student-table {
+        font-size: 18px;
+        width: 1600px !important;
+    }
+
+    table tr th {
+        font-size: 20px;
+    }
+
+    table tr td {
+        font-size: 18px;
+    }
+
+    .add-student-panel {
+        height: 700px;
+        width: 600px;
+    }
+
+    .add-student-panel .heading {
+        font-size: 24px;
+    }
+
+    .add-student-panel .label {
+        font-size: 22px;
+    }
+
+    .add-student-panel .input {
+        font-size: 20px;
+    }
+
+    .add-student-panel .add-button {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width:1900px) {
+    ul li {
+        font-size: 33px;
+    }
+
+    .list-2 li a {
+        font-size: 20px;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 240px;
+        padding: 14px 0;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 20px;
+    }
+
+    #batch-svg,
+    #total-students-svg {
+        width: 22px;
+    }
+
+    #departments-svg {
+        width: 27px;
+    }
+
+    .search-bar {
+        font-size: 19px !important;
+    }
+
+    .add-student-btn {
+        font-size: 19px;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 19px;
+    }
+
+    .student-table {
+        font-size: 19px;
+        width: 1800px !important;
+    }
+
+    table tr th {
+        font-size: 21px;
+    }
+
+    table tr td {
+        font-size: 19px;
+    }
+
+    .add-student-panel {
+        height: 750px;
+        width: 650px;
+    }
+
+    .add-student-panel .heading {
+        font-size: 26px;
+    }
+
+    .add-student-panel .label {
+        font-size: 24px;
+    }
+
+    .add-student-panel .input {
+        font-size: 22px;
+    }
+
+    .add-student-panel .add-button {
+        font-size: 21px;
+    }
+}
+
+@media only screen and (min-width:2100px) {
+    ul li {
+        font-size: 35px;
+    }
+
+    .list-2 li a {
+        font-size: 22px;
+    }
+
+    .top-section {
+        margin: 12px auto !important;
+    }
+
+    .sep {
+        margin: 22px auto !important;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 260px;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 23px;
+    }
+
+    #batch-svg,
+    #total-students-svg {
+        width: 23px;
+    }
+
+    #departments-svg {
+        width: 28px;
+    }
+
+    .top-panel {
+        margin: 12px 0 !important;
+    }
+
+    .search-bar {
+        font-size: 21px !important;
+    }
+
+    .add-student-btn {
+        font-size: 21px !important;
+    }
+
+    .same-btn-all img {
+        width: 22px;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 21px;
+    }
+
+    .student-table {
+        font-size: 21px;
+        width: 2000px !important;
+        margin: 12px auto !important;
+    }
+
+    table tr th {
+        font-size: 23px;
+    }
+
+    table tr td {
+        font-size: 21px;
+    }
+
+    .add-student-panel .heading {
+        font-size: 28px;
+    }
+
+    .add-student-panel .label {
+        font-size: 26px;
+    }
+
+    .add-student-panel .input {
+        font-size: 24px;
+    }
+
+    .add-student-panel .add-button {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (min-width:2400px) {
+    ul li {
+        font-size: 37px;
+    }
+
+    .list-2 li a {
+        font-size: 24px;
+    }
+
+    .top-section {
+        margin: 15px auto !important;
+    }
+
+    .sep {
+        margin: 25px auto !important;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 280px;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 24px;
+    }
+
+    #batch-svg,
+    #total-students-svg {
+        width: 24px;
+    }
+
+    #departments-svg {
+        width: 28px;
+    }
+
+
+    .top-panel {
+        margin: 15px 0 !important;
+    }
+
+    .search-bar {
+        font-size: 23px !important;
+    }
+
+    .add-student-btn {
+        font-size: 23px !important;
+    }
+
+    .same-btn-all img {
+        width: 23px;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 23px;
+    }
+
+    .student-table {
+        font-size: 23px;
+        width: 2200px !important;
+        margin: 15px auto !important;
+    }
+
+    table tr th {
+        font-size: 25px;
+    }
+
+    table tr td {
+        font-size: 23px;
+    }
+
+    .add-student-panel .heading {
+        font-size: 30px;
+    }
+
+    .add-student-panel .label {
+        font-size: 28px;
+    }
+
+    .add-student-panel .input {
+        font-size: 26px;
+    }
+
+    .add-student-panel .add-button {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width:2700px) {
+    ul li {
+        font-size: 39px;
+    }
+
+    .list-2 li a {
+        font-size: 26px;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 300px;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 26px;
+    }
+
+    #batch-svg,
+    #total-students-svg {
+        width: 25px;
+    }
+
+    #departments-svg {
+        width: 29px;
+    }
+
+    .search-bar {
+        font-size: 25px !important;
+    }
+
+    .add-student-btn {
+        font-size: 25px !important;
+    }
+
+    .same-btn-all img {
+        width: 24px;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 25px;
+    }
+
+    .student-table {
+        font-size: 25px;
+        width: 2400px !important;
+    }
+
+    table tr th {
+        font-size: 27px;
+    }
+
+    table tr td {
+        font-size: 25px;
+    }
+
+    .add-student-panel .heading {
+        font-size: 32px;
+    }
+
+    .add-student-panel .label {
+        font-size: 30px;
+    }
+
+    .add-student-panel .input {
+        font-size: 28px;
+    }
+
+    .add-student-panel .add-button {
+        font-size: 27px;
+    }
+}
+
+@media only screen and (min-width:2950px) {
+    ul li {
+        font-size: 41px;
+    }
+
+    .list-2 li a {
+        font-size: 28px;
+    }
+
+    .batch,
+    .total-students,
+    .departments {
+        width: 320px;
+    }
+
+    .batch span,
+    .total-students span,
+    .departments span a {
+        font-size: 28px;
+    }
+
+    #batch-svg,
+    #total-students-svg {
+        width: 26px;
+    }
+
+    #departments-svg {
+        width: 30px;
+    }
+
+    .search-bar {
+        font-size: 27px !important;
+    }
+
+    .add-student-btn {
+        font-size: 27px !important;
+    }
+
+    .same-btn-all img {
+        width: 25px;
+    }
+
+    .export-btn,
+    .import-btn {
+        font-size: 27px;
+    }
+
+    .student-table {
+        font-size: 27px;
+        width: 2700px !important;
+    }
+
+    table tr th {
+        font-size: 29px;
+    }
+
+    table tr td {
+        font-size: 27px;
+    }
+
+}

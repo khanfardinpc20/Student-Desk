@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Student Desk</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+            animation: in 0.5s ease-in-out;
+        }
+
+        @keyframes in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section>h2 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 100px;
+        }
+
+        .departments {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .all-dept {
+            width: 180px;
+            height: 170px;
+            background-color: rgba(0, 0, 0, 0.137);
+            border: solid rgb(158, 157, 157) 2px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .all-dept:hover {
+            transform: scale(1.1);
+        }
+
+        .all-dept>a {
+            text-decoration: none;
+            color: white;
+            font-size: 35px;
+            position: fixed;
+            opacity: 1;
+        }
+
+        .year-menu {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            padding: 5px 20px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .year-menu>button {
+            background-color: rgba(0, 0, 0, 0.342);
+            color: white;
+            padding: 5px 0;
+            font-size: 20px;
+            font-weight: 400 !important;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .all-dept.active .year-menu {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
+            z-index: 1500;
+        }
+
+        .all-dept.active>a {
+            opacity: 0;
+        }
+
+        @media only screen and (max-width:1366px) {
+            section {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width:1550px) {
+
+            .all-dept {
+                width: 190px;
+                height: 180px;
+            }
+
+            section>h2 {
+                font-size: 45px;
+            }
+
+            .all-dept>a {
+                font-size: 40px;
+            }
+        }
+
+        @media only screen and (min-width:1850px) {
+            .all-dept {
+                width: 210px;
+                height: 200px;
+            }
+
+            section>h2 {
+                font-size: 48px;
+                position: absolute;
+                top: 90px;
+            }
+
+            .all-dept>a {
+                font-size: 43px;
+            }
+        }
+
+        @media only screen and (min-width:2150px) {
+            .all-dept {
+                width: 220px;
+                height: 210px;
+            }
+
+            section>h2 {
+                font-size: 51px;
+                position: absolute;
+                top: 80px;
+            }
+
+            .all-dept>a {
+                font-size: 46px;
+            }
+        }
+
+        @media only screen and (min-width:2450px) {
+            .all-dept {
+                width: 230px;
+                height: 220px;
+            }
+
+            section>h2 {
+                font-size: 54px;
+                position: absolute;
+                top: 70px;
+            }
+
+            .all-dept>a {
+                font-size: 49px;
+            }
+        }
+
+        @media only screen and (min-width:2750px) {
+            .all-dept {
+                width: 240px;
+                height: 230px;
+            }
+
+            section>h2 {
+                font-size: 59px;
+                position: absolute;
+                top: 60px;
+            }
+
+            .all-dept>a {
+                font-size: 54px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h2>Select Department to Proceed</h2>
+            <div class="departments">
+                <div class="all-dept" id="bca-dept">
+                    <a class="txt" href="javascript:void(0)">BCA</a>
+                    <div class="year-menu">
+                        <button data-page="bca-department/bca-year1.html">1st Year</button>
+                        <button data-page="bca-department/bca-year2.html">2nd Year</button>
+                        <button data-page="bca-department/bca-year3.html">3rd Year</button>
+                    </div>
+                </div>
+                <div class="all-dept" id="bba-dept">
+                    <a href="javascript:void(0)">BBA</a>
+
+                    <div class="year-menu">
+                        <button data-page="bba-department/bba-year1.html">1st Year</button>
+                        <button data-page="bba-department/bba-year2.html">2nd Year</button>
+                        <button data-page="bba-department/bba-year3.html">3rd Year</button>
+                    </div>
+                </div>
+                <div class="all-dept" id="bcom--dept">
+                    <a href="javascript:void(0)" id="bcom-dept">B.Com</a>
+
+                    <div class="year-menu">
+                        <button data-page="bcom-department/bcom-year1.html">1st Year</button>
+                        <button data-page="bcom-department/bcom-year2.html">2nd Year</button>
+                        <button data-page="bcom-department/bcom-year3.html">3rd Year</button>
+                    </div>
+                </div>
+                <div class="all-dept" id="bsc-dept">
+                    <a href="javascript:void(0)">B.Sc</a>
+
+                    <div class="year-menu">
+                        <button data-page="bsc-department/bsc-year1.html">1st Year</button>
+                        <button data-page="bsc-department/bsc-year2.html">2nd Year</button>
+                        <button data-page="bsc-department/bsc-year3.html">3rd Year</button>
+                    </div>
+                </div>
+                <div class="all-dept" id="ba--dept">
+                    <a href="javascript:void(0)" id="ba-dept">BA</a>
+
+                    <div class="year-menu">
+                        <button data-page="ba-department/ba-year1.html">1st Year</button>
+                        <button data-page="ba-department/ba-year2.html">2nd Year</button>
+                        <button data-page="ba-department/ba-year3.html">3rd Year</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // ===============================
+        // Toggle department year menu
+        // ===============================
+        document.querySelectorAll(".all-dept").forEach(card => {
+            card.addEventListener("click", () => {
+
+                // Close other open cards
+                document.querySelectorAll(".all-dept").forEach(c => {
+                    if (c !== card) c.classList.remove("active");
+                });
+
+                // Toggle current card
+                card.classList.toggle("active");
+            });
+        });
+
+        // ===============================
+        // Redirect on year button click
+        // ===============================
+        document.querySelectorAll(".year-menu button").forEach(button => {
+            button.addEventListener("click", (e) => {
+                e.stopPropagation(); // VERY important
+
+                const page = button.getAttribute("data-page");
+                if (page) {
+                    window.location.href = page;
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
