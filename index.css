@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #2e3138;
+    color: white;
+    height: 100vh;
+}
+
+
+
+/* INTRO SCREEN */
+/* default state */
+
+#intro-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2e3138;
+    z-index: 10;
+}
+
+
+/* skip intro if already played */
+
+.skip-intro #intro-screen {
+    display: none;
+}
+
+/* INTRO TEXT ANIMATION */
+
+.intro-content h1 {
+    font-size: 48px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: introFade 0.8s ease forwards;
+    text-align: center;
+}
+
+.intro-content p {
+    margin: 0 !important;
+    color: #b0b0b0;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: introFade 0.8s ease forwards;
+    animation-delay: 0.2s;
+    text-align: center;
+}
+
+
+@keyframes introFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* UNSUPPORTED SCREEN */
+
+#unsupported-screen {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.message-box {
+    max-width: 420px;
+}
+
+.message-box img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.message-box h2 {
+    margin-bottom: 10px;
+}
+
+.message-box p {
+    color: #c0c0c0;
+}
+
+
+
+/* AUTH SECTION */
+
+#auth-section {
+    display: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.auth-card {
+    background: #3a3e47;
+    padding: 35px;
+    border-radius: 10px;
+    width: 360px;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #2b2e34;
+    color: white;
+}
+
+#switch-msg {
+    color: rgb(255, 255, 255) !important;
+}
+
+#switch-action {
+    color: rgb(27, 131, 250);
+}
+
+#auth-button {
+    width: 100% !important;
+}
+
+/* PASSWORD FIELD */
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 16px;
+    right: 11px;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none;
+    cursor: pointer;
+}
+
+#show-eye {
+    display: none;
+}
+
+
+/* BUTTON */
+
+.auth-card button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #5d8dff;
+    color: white;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+
+
+/* SWITCH */
+
+.switch-text {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.switch-text span {
+    color: #7fa7ff;
+    cursor: pointer;
+}
+
+#auth-error {
+    margin-top: 10px;
+    color: #ff6b6b;
+    text-align: center;
+}
+
+
+/* =================================
+Meida Queries for Unsupported Devices
+====================================*/
+
+/* MOBILE DEVICES */
+@media screen and (max-width:480px) {
+
+    .intro-content h1 {
+        font-size: 28px;
+    }
+
+    .intro-content p {
+        font-size: 14px;
+    }
+
+    .message-box {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .message-box img {
+        width: 90px;
+    }
+
+    .message-box h2 {
+        font-size: 20px;
+    }
+
+    .message-box p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    #auth-section {
+        display: none !important;
+    }
+
+}
+
+
+/* LARGE MOBILE / SMALL TABLET */
+@media screen and (min-width:481px) and (max-width:768px) {
+
+    .intro-content h1 {
+        font-size: 38px;
+    }
+
+    .intro-content p {
+        font-size: 16px;
+    }
+
+    .message-box {
+        width: 80%;
+    }
+
+    .message-box img {
+        width: 100px;
+    }
+
+    .message-box h2 {
+        font-size: 22px;
+    }
+
+    .message-box p {
+        font-size: 15px;
+    }
+
+    #auth-section {
+        display: none !important;
+    }
+
+}
+
+
+/* TABLETS */
+@media screen and (min-width:769px) and (max-width:1024px) {
+
+    .intro-content h1 {
+        font-size: 42px;
+    }
+
+    .intro-content p {
+        font-size: 17px;
+    }
+
+    .message-box {
+        width: 60%;
+    }
+
+    .message-box img {
+        width: 110px;
+    }
+
+    .message-box h2 {
+        font-size: 24px;
+    }
+
+    .message-box p {
+        font-size: 16px;
+    }
+
+    #auth-section {
+        display: none !important;
+    }
+
+}
+
+
+/* SMALL LAPTOPS (<14 inch) */
+@media screen and (min-width:1025px) and (max-width:1365px) {
+
+    .intro-content h1 {
+        font-size: 48px;
+    }
+
+    .intro-content p {
+        font-size: 18px;
+    }
+
+    .message-box {
+        width: 500px;
+    }
+
+    .message-box img {
+        width: 120px;
+    }
+
+    #auth-section {
+        display: none !important;
+    }
+
+}
+
+
+
+/* =================================
+Meida Queries for Supported Devices
+====================================*/
+
+
+/* NORMAL LAPTOPS */
+@media screen and (min-width:1366px) and (max-width:1600px) {
+
+    .auth-card {
+        width: 420px;
+        padding: 40px;
+    }
+
+    .auth-card h2 {
+        font-size: 26px;
+    }
+
+    .auth-card input {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/* LARGE DESKTOP MONITORS */
+@media screen and (min-width:1601px) {
+
+    .auth-card {
+        width: 460px;
+        padding: 45px;
+    }
+
+    .auth-card h2 {
+        font-size: 28px;
+    }
+
+    .auth-card input {
+        font-size: 17px;
+    }
+
+    .auth-card button {
+        font-size: 17px;
+    }
+
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Desk</title>
+
+    <link rel="stylesheet" href="../dep-style/year-style.css">
+    <link rel="stylesheet" href="../dep-style/year-res-css.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <ul class="list-1">
+                <li id="clg-name">Student Desk</li>
+            </ul>
+
+            <ul class="list-2" id="year-links">
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <div class="add-student-panel-container hide">
+
+            <div class="add-student-panel">
+
+                <span class="heading">Enter Student Details</span>
+
+                <label class="label">Student Roll No :</label>
+                <input class="input" type="text" id="student-roll">
+
+                <label class="label">Student Name :</label>
+                <input class="input" type="text" id="student-name">
+
+                <label class="label">Semester :</label>
+                <input class="input" type="text" id="student-semester">
+
+                <label class="label">Phone Number :</label>
+                <input class="input" type="text" id="student-phone">
+
+                <label class="label">Parent Phone :</label>
+                <input class="input" type="text" id="parent-phone">
+
+                <label class="label">Email :</label>
+                <input class="input" type="text" id="student-email">
+
+                <label class="label">Total Fees :</label>
+                <input class="input" type="text" id="student-fees">
+
+                <label class="label">Paid Fees :</label>
+                <input class="input" type="text" id="student-paid">
+
+                <button type="button" class="add-button">Add Student</button>
+
+            </div>
+
+        </div>
+
+
+        <section class="top-section">
+
+            <div class="dashboard">
+
+                <div class="batch dash-stat ">
+                    <img src="../assets/time-svgr.svg" alt="" width="20">
+                    <span id="batch-info">Batch: 2023</span>
+                    <!-- <span>2023 - 2026</span> -->
+                </div>
+
+                <div class="total-students dash-stat ">
+                    <img src="../assets/student-group-svg.svg" alt="" width="20">
+                    <span>Total Students :</span>
+                    <span id="student-count">0</span>
+                </div>
+
+                <div class="departments dash-stat ">
+                    <img src="../assets/departments-svg.svg" alt="" width="20">
+                    <span><a href="../home-page/home.html">Go to Departments</a></span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="sep"></div>
+
+
+        <section class="mid-section">
+
+            <div class="top-panel">
+
+                <input type="search" placeholder="🔍 Search by Name or Roll Number" id="search-bar" class="search-bar">
+
+                <button id="add-student-btn" class="add-student-btn same-btn-all">
+                    <img src="../assets/add-student-svg.svg" alt="" width="20"> Add Student
+                </button>
+
+                <button id="import-btn" class="import-btn same-btn-all">
+
+                    <img src="../assets/import-svg.svg" alt="" width="20"> Import
+                </button>
+
+                <button id="export-btn" class="export-btn same-btn-all">
+                    <img src="../assets/export-svg.svg" alt="" width="20"> Export
+                </button>
+
+            </div>
+
+
+            <div class="student-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>S.no</th>
+                            <th>Roll Number</th>
+                            <th>Name</th>
+                            <th>Semester</th>
+                            <th>Department</th>
+                            <th>Phone No.</th>
+                            <th>Parent No.</th>
+                            <th>Email</th>
+                            <th>Total Fees</th>
+                            <th>Paid</th>
+                            <th>Remaining</th>
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="student-table-body"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="sub-year-file.js"></script>
+
+</body>
+
+</html>

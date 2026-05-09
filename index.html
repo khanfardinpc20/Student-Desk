@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Desk</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+
+        if (sessionStorage.getItem("introPlayed")) {
+            document.documentElement.classList.add("skip-intro")
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <!-- INTRO SCREEN -->
+
+    <section id="intro-screen">
+
+        <div class="intro-content">
+
+            <h1>Student Desk</h1>
+            <p>Student Administration Portal</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- UNSUPPORTED DEVICE MESSAGE -->
+
+    <section id="unsupported-screen">
+
+        <div class="message-box">
+
+            <div class="svg-box">
+
+                <!-- Replace with your SVG -->
+                <img src="assets/device-svg.svg" alt="device">
+
+            </div>
+
+            <h2>Unsupported Screen Size</h2>
+
+            <p>
+                This system is designed for laptop and desktop devices with larger screens.
+            </p>
+            <p>
+                (Student Desk supports devices with a minimum screen size of 14 inches.)
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LOGIN / SIGNUP -->
+
+    <section id="auth-section">
+
+        <div class="auth-card">
+
+            <h2 id="auth-title">Login</h2>
+
+            <input id="college-name" placeholder="College Name" style="display:none">
+
+            <input id="auth-email" placeholder="College Email / ID">
+
+
+            <div class="password-field">
+
+                <input id="auth-password" type="password" placeholder="Password">
+
+                <button type="button" class="password-toggle" onclick="togglePassword()">
+
+                    <img id="show-eye" src="assets/show-pass-svg.svg" width="17">
+                    <img id="hide-eye" src="assets/hide-pass-svg.svg" width="17">
+
+                </button>
+
+            </div>
+
+
+            <button id="auth-button" onclick="loginUser()">Login</button>
+
+
+            <p class="switch-text">
+
+                <span id="switch-msg">Don't have account?</span>
+                <span id="switch-action" onclick="showSignup()">Sign Up</span>
+
+            </p>
+
+
+            <div id="auth-error"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
